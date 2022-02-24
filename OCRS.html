@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="online car rental system" />
+  <meta name="keywords"    content="OCRSprototype" />
+  <meta name="author"      content="Vicky Vu" />
+  <title>Online Car Rental System</title>
+  <script src="OCRS.js"></script>
+  <link rel="stylesheet" href="OCRS.css"/>
+</head>
+<body>
+<header>
+  <h1>Online Car Rental System</h1>
+</header>
+<article>
+  <h2>Car Rental Booking Form:</h2>
+    <form id="form">
+	    <label class="label">Customer Name: <input type="text" id="name" /></label>  
+		<span id="errorName"></span>
+		<br /><br />
+		
+		<label class="label">Email Address: <input type="text" id="email" /></label>  
+		<span id="errorEmail"></span>
+		<br /><br />
+		
+		<label class="label">Number of Rent Days: <input type="text" id="noOfDays" /></label> 
+		<span id="errorNoOfDays"></span>
+		
+		<br /><ul id="discount"> Additional discount applies for: 
+		<li>Rent for 10 to 14 days – get 5% off the rental cost.</li>
+		<li>Rent for more than 2 weeks (15 days or more) – get 10% off the rental cost.</li></ul><br />
+		
+		<fieldset id="carGroups">
+			<legend id="legend">Please select the group/type of car:</legend>
+			<p>
+			    <input type="radio" id="groupA" name="carGroup" value="group A"/>
+			    <label for="groupA" class="label">Group A (Small, compact, e.g. Toyota Yaris) - $50 per day</label> 	
+			</p>
+			<p>
+			    <input type="radio" id="groupB" name="carGroup" value="group B"/>
+			    <label for="groupB" class="label">Group B (Hatch or Sedan, e.g. Toyota Corolla or Camry ) - $60 per day</label>
+			</p>
+			<p>
+			    <input type="radio" id="groupC" name="carGroup" value="group C"/>
+				<label for="groupC" class="label">Group C (Family size, station wagon, e.g. Mazda 6 Wagon) - $70 per day</label>
+			</p>
+		</fieldset>
+		<span id="errorRadioButton"></span>
+		<br /><br />
+		
+		<input type="checkbox" id="removeExcess" value="true">
+		<label for="removeExcess" class="label">Remove excess of $2000 for any damage - 
+		Instead, the rental fee will be charged additional $3 per day for rentals under 10 days long, or $2 per day for rentals of 10 days and longer.</label>
+		<br /><br />
+		
+		<button type="button" id="resetForm" class="button"> Reset </button>
+		<button type="button" id="getQuote" class="button"> Get Quote </button>
+	</form>
+
+	<p id="quote" class="output"></p>
+ <hr class="rounded">
+ 
+ <h2>Functionality for Management:</h2>
+    <form>
+        <button type="button" id="listQuotes" class="button"> List All Quotes </button>
+		<br /><br />
+		
+		<label id="label" class="label">Customer Name: <input type="text" id="nameSearch" /></label>
+		  <button type="button" id="searchByName" class="button"> Search Quote by Name </button><br />
+		  <span class="margin1" id="errorNameSearch"></span>
+		<br />
+		
+		<label class="label" for="carGroupForSearch">Car Group:</label>
+		    <select id="carGroupForSearch">
+			    <option value="blank">---Choose One---</option>
+				<option value="group A">Group A (Small, compact, e.g. Toyota Yaris)</option>
+				<option value="group B">Group B (Hatch or Sedan, e.g. Toyota Corolla or Camry )</option>
+				<option value="group C">Group C (Family size, station wagon, e.g. Mazda 6 Wagon)</option>
+			</select>
+		<button type="button" id="searchByCarGroup" class="button"> Search Quotes by Car Group </button><br />
+		<span class="margin2" id="errorDropdown"></span>
+	</form>
+	<section class="output" id="msg"></section>
+  <hr class="rounded"><br />
+</article>
+
+<footer><p>Produced by Vicky Vu 102895606</p></footer>  
+</body>
+</html>
